@@ -1,11 +1,22 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore } from "@reduxjs/toolkit";
+import createSagaMiddleware from "redux-saga";
 
-import weather from './slices/weather/weather';
-import location from './slices/location/location';
+import rootSaga from "./sagas/root";
+import weatherSlice from "./slices/weather/weatherSlice";
+import locationSlice from "./slices/location/locationSlice";
+
+const sagaMiddleware = createSagaMiddleware()
 
 export default configureStore({
     reducer: {
-        weather,
-        location
-    }
+        weatherSlice,
+        locationSlice
+    },
+    middleware: getDefaultMiddleware => [
+        ...getDefaultMiddleware({ thunk: false }),
+        sagaMiddleware,
+    ],
 })
+
+
+sagaMiddleware.run(rootSaga)

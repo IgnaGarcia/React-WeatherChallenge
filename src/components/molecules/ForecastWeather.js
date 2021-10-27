@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import DayForecastWeather from "../atoms/DayForecastWeather";
 
 const ForecastWeather = () => {
-    const { forecast } = useSelector((state) => state.weather);
+    const { forecast } = useSelector((state) => state.weatherSlice);
 
     const forecastByDay = new Map();
 
