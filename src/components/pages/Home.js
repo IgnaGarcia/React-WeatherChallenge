@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import { fetchCurrentWeatherAction, fetchForecastAction } from "../../store/slices/weather/weatherSlice";
 import { fetchLocationAction } from "../../store/slices/location/locationSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -6,7 +7,9 @@ import { useDispatch, useSelector } from "react-redux";
 import CurrentWeather from "../molecules/CurrentWeather";
 import ForecastWeather from "../molecules/ForecastWeather";
 
-const Weather = () => {
+
+
+const Home = () => {
     const [city, setCity] = useState(undefined)
     const [initCity, setInitCity] = useState(undefined)
 
@@ -29,7 +32,7 @@ const Weather = () => {
     }, [dispatch, city, location.city]);
 
     return (
-        <>
+        <div>
             <ul>
                 <li><button onClick={() => setCity(initCity)}> Ciudad Actual ({initCity}) </button></li>
                 <li><button onClick={() => setCity("Roma")}> Roma </button></li>
@@ -38,8 +41,8 @@ const Weather = () => {
             </ul>
             <CurrentWeather />
             <ForecastWeather />
-        </>
+        </div>
     );
 };
 
-export default Weather;
+export default Home;
