@@ -6,14 +6,10 @@ import WeatherInfo from "../atoms/WeatherInfo";
 import LocationInfo from "../atoms/LocationInfo";
 
 const Weather = styled.div`
-    margin: 1.4em 0;
+    margin: 1.4em 3em;
     display: flex;
     justify-content: space-between;
 `;
-
-
-
-
 
 const CurrentWeather = () => {
     const { currentWeather } = useSelector((state) => state.weatherSlice);

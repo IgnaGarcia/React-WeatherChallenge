@@ -1,6 +1,15 @@
 import React from "react";
+import styled from "styled-components";
 import { useSelector } from "react-redux";
+
 import DayForecastWeather from "../atoms/DayForecastWeather";
+
+const ForecastList = styled.ul`
+    display: flex;
+    list-style: none;
+    border-top: 1px solid #555;
+    justify-content: space-around;
+`;
 
 const ForecastWeather = () => {
     const { forecast } = useSelector((state) => state.weatherSlice);
@@ -18,13 +27,13 @@ const ForecastWeather = () => {
     });
 
     return (
-        <div>
+        <ForecastList>
             {
                 Array.from(forecastByDay).map(([key, value]) => (
                     <DayForecastWeather key={key} weather={value} date={key}/>
                 ))
             }
-        </div>
+        </ForecastList>
     );
 };
 

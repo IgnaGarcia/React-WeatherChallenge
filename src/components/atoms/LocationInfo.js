@@ -4,7 +4,7 @@ import styled from "styled-components";
 const LocationInfoDiv = styled.div`
     h3{
         font-size: 2.4em;
-        color: #fafafa;
+        color: #f5f5f5;
     }
     p{
         font-size: 1.4em;

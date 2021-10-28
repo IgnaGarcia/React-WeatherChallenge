@@ -8,7 +8,7 @@ const WeatherInfoDiv = styled.div`
     }
     h2{ 
         position: relative;
-        color: #fafafa;
+        color: #f5f5f5;
         font-size: 4em;
         text-align: center;
         span{

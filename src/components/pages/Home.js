@@ -14,8 +14,8 @@ const WeatherCard = styled.main`
     box-shadow: 0px 0px 30px -15px #555;
     background: #292A2D;
     border-radius: 15px;
-    width: 40%;
-    padding: 2em 3em;
+    width: 45%;
+    padding: 2em 0 1em 0;
 `;
 
 const Home = () => {

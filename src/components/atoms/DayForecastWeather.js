@@ -1,4 +1,28 @@
-import React from 'react'
+import React from "react";
+import styled from "styled-components";
+
+const DayForecast = styled.li`
+    width: auto;
+    height: 100px;
+    margin: 5px 5px 0 5px;
+    color: #bfbfbf;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    h3 {
+        font-size: .9em;
+    }
+    .max{
+        font-size: 1.1em;
+        font-weight: 600;
+    }
+    .min{
+        font-size: 1.1em;
+    }
+    .description{
+        color: #f5f5f5;
+    }
+`;
 
 const DayForecastWeather = ({ weather, date }) => {
     let max = 0
@@ -15,9 +39,12 @@ const DayForecastWeather = ({ weather, date }) => {
     })
 
     return (
-        <div>
+        <DayForecast>
             <h3> {date} </h3>
-            <p> <b>{Math.round(max)}°</b> - <i>{Math.round(min)}°</i> </p>
+            <p> 
+                <span className="max">{Math.round(max)}°</span> <span className="min">{Math.round(min)}° </span>
+            </p>
+            <p className="description"> {weather[0].weather[0].description} </p>
             {/*
                 weather.map(value => 
                     <>
@@ -33,7 +60,7 @@ const DayForecastWeather = ({ weather, date }) => {
                 )
             */
             }
-        </div>
+        </DayForecast>
     )
 }
 
