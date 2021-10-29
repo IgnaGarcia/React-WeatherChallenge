@@ -48,26 +48,11 @@ const DayForecastWeather = ({ weather, date }) => {
 
     return (
         <DayForecast>
-            <h3> {dateObj.getDay()}/{dateObj.getMonth()} </h3>
+            <h3> {dateObj.getDate()}/{dateObj.getMonth()} </h3>
             <p className="description"> {weather[0].weather[0].description} </p>
             <p className="maxmin"> 
-                <span className="max">{Math.round(max)}°</span> <span className="min">{Math.round(min)}° </span>
+                <span className="max"> {Math.round(max)}°</span> <span className="min">{Math.round(min)}° </span>
             </p>
-            {/*
-                weather.map(value => 
-                    <>
-                        <span> {weather.dt_txt.split(' ')} </span>
-                        <span> {weather.weather[0].description} </span>
-                        <span> {weather.main.temp} </span>
-                        <span> ST {weather.main.feels_like} </span>
-                        <span> max {weather.main.temp_max} </span>
-                        <span> min {weather.main.temp_min} </span>
-                        <span> viento a {weather.wind.speed} km/h </span>
-                        <span> humedad {weather.main.humidity} mbar </span>
-                    </>
-                )
-            */
-            }
         </DayForecast>
     )
 }
