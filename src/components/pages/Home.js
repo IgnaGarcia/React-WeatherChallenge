@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import CurrentWeather from "../molecules/CurrentWeather";
 import ForecastWeather from "../molecules/ForecastWeather";
-import CitySelector from "../molecules/CitySelector";
+import CitySelector from "../atoms/CitySelector";
 
 const WeatherCard = styled.main`
     border: 1px solid #555;

@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { fetchCities } from "../../service/cityService"
-//<li><button onClick={() => setCity("Roma")}> Roma </button></li>
 
 const Selector = styled.select`
     background: #e5e5e5;
@@ -19,7 +18,6 @@ const Selector = styled.select`
 
 const CitySelector = ({ setCity, initCity}) => {
     const handleChange = (event) => {
-        console.log(event.target.value);
         setCity(event.target.value);
     }
 
@@ -29,7 +27,7 @@ const CitySelector = ({ setCity, initCity}) => {
         <Selector onChange={handleChange}>
             <option value={initCity}>Ciudad Actual ({initCity})</option>
             { 
-                cities.map(citie => <option value={citie.code}> {citie.name} </option>) 
+                cities.map(citie => <option key={citie.code} value={citie.code}> {citie.name} </option>) 
             }
         </Selector>
     );

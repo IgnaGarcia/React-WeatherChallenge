@@ -36,7 +36,7 @@ const DayForecastWeather = ({ weather, date }) => {
     let min = 0
     let flag = true
     let dateObj = new Date(date)
-
+    
     weather.forEach(el =>{
         if(flag){
             max = el.main.temp_max
@@ -48,7 +48,7 @@ const DayForecastWeather = ({ weather, date }) => {
 
     return (
         <DayForecast>
-            <h3> {dateObj.getDate()}/{dateObj.getMonth()} </h3>
+            <h3> {dateObj.getDate() + 1}/{dateObj.getMonth() + 1} </h3>
             <p className="description"> {weather[0].weather[0].description} </p>
             <p className="maxmin"> 
                 <span className="max"> {Math.round(max)}°</span> <span className="min">{Math.round(min)}° </span>
