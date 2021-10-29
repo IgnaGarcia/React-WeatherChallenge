@@ -6,5 +6,4 @@ export const fetchLocation = async () => {
         console.error(err)
         return null;
     }
-
 };
