@@ -4,11 +4,11 @@ import styled from "styled-components";
 const DayForecast = styled.li`
     width: auto;
     height: 100px;
-    margin: 5px 5px 0 5px;
+    padding: 1em 1.4em;
     color: #bfbfbf;
     display: flex;
+    flex: 1 1;
     flex-direction: column;
-    justify-content: space-around;
     h3 {
         font-size: .9em;
     }
@@ -21,6 +21,13 @@ const DayForecast = styled.li`
     }
     .description{
         color: #f5f5f5;
+        margin: 7px 0 20px 0;
+    }
+    .maxmin{
+        margin-top: auto;
+    }
+    :not(:last-child) {
+        border-right: 1px solid #555;
     }
 `;
 
@@ -28,6 +35,7 @@ const DayForecastWeather = ({ weather, date }) => {
     let max = 0
     let min = 0
     let flag = true
+    let dateObj = new Date(date)
 
     weather.forEach(el =>{
         if(flag){
@@ -40,11 +48,11 @@ const DayForecastWeather = ({ weather, date }) => {
 
     return (
         <DayForecast>
-            <h3> {date} </h3>
-            <p> 
+            <h3> {dateObj.getDay()}/{dateObj.getMonth()} </h3>
+            <p className="description"> {weather[0].weather[0].description} </p>
+            <p className="maxmin"> 
                 <span className="max">{Math.round(max)}°</span> <span className="min">{Math.round(min)}° </span>
             </p>
-            <p className="description"> {weather[0].weather[0].description} </p>
             {/*
                 weather.map(value => 
                     <>
